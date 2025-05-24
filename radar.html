@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radar Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      background: #1e1e2f;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+    canvas {
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="radarChart"></canvas>
+
+  <script>
+    const ctx = document.getElementById('radarChart');
+
+    new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: [
+         'Problem Solving',
+         'Debugging',
+         'Code Optimization', 
+         'Learning & Adaptability', 
+         'Collaboration', 
+         'Innovative Thinking'],
+
+        datasets: [{
+          label: 'Skill Level',
+          data: [5, 4, 5, 3, 3.5, 4.5],
+          fill: true,
+          backgroundColor: 'rgba(138,43,226, 0.2)',
+          borderColor: 'rgba(138,43,226, 1)',
+          pointBackgroundColor: 'transparent',
+        }]
+      },
+
+
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+             display: false },
+          title: { 
+              display: true, 
+              text: 'Dev Skill Radar',
+              color: 'white' }
+        },
+        scales: {
+          r: {
+            min: 0.5,
+            max: 5,
+            angleLines: { color: 'gray' },
+            grid: { color: 'gray' },
+            pointLabels: { color: 'white' },
+            ticks: { 
+              stepSize: 0.5,
+                color: 'white' }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
