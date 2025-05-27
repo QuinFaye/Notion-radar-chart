@@ -26,6 +26,8 @@
 
   <script>
     const ctx = document.getElementById('radarChart');
+    const isDark = window.matchMedia('prefers-color-scheme:dark')matches;
+    const labelColor = isDark ? #fff : #000 ;
 
     new Chart(ctx, {
       type: 'radar',
@@ -68,7 +70,7 @@
             pointLabels: { color: 'rgba(138,43,226, 1)' },
             ticks: { 
               stepSize: 0.5,
-              color: 'white',
+              color: labelColor,
               backdropColor: 'transparent' }
           }
         }
