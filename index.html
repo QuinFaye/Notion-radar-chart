@@ -26,8 +26,8 @@
 
   <script>
     const ctx = document.getElementById('radarChart');
-    const isDark = window.matchMedia('prefers-color-scheme:dark')matches;
-    const labelColor = isDark ? #fff : #000 ;
+    const isDark = window.matchMedia('prefers-color-scheme:dark').matches;
+    const labelColor = isDark ? '#fff' : '#000' ;
 
     new Chart(ctx, {
       type: 'radar',
